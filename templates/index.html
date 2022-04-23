@@ -1,0 +1,151 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American sign language letter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+        
+        #bg {
+            background-image: url(https://i.pinimg.com/564x/df/6e/dd/df6edd7aa988520a40f2ede003f35a58.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            height: 100%;
+            opacity: .4;
+            z-index: 0;
+        }
+        
+        #box {
+            height: 80%;
+            z-index: 10;
+            margin-top: -45%;
+            background-color: white;
+            border-radius: 10px;
+            margin-left: 8%;
+        }
+        
+        #output {
+            width: 37vw;
+            height: 28vw;
+        }
+        
+        #name {
+            font-family: 'Noto Serif', serif;
+            font-size: 200%;
+        }
+        
+        #myProgress {
+            width: 100%;
+            background-color: #ddd;
+        }
+        
+        #myBar {
+            width: 1%;
+            height: 30px;
+            background-color: #FFC0CB;
+        }
+        
+        #btn {
+            position: absolute;
+            left: 85%;
+            top: 90%;
+            width: 20%;
+            height: 15%;
+            font-size: 150%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #FFC0CB;">
+        <a class="navbar-brand" href="#">American sign language letter</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="do.html">Details</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="credit.html">Members</a>
+                </li>
+
+
+            </ul>
+            
+        </div>
+    </nav>
+    <div class="container col-12 d-flex justify-content-center" id="bg"></div>
+
+    <div class="col-10 d-flex justify-content-center" id="box">
+        <div class="col-12" id="title">
+            <h1 class="text-center">American sign language letter</h1>
+            <h5 class="text-right">การอ่านภาษามือจากรูปภาพ</h5>
+
+            <div class="col-12 row" id="content">
+                <div id="boxpicture" class="col-6">
+
+
+
+                    <img id="output" src="{{ url_for('static', filename=path) }}">
+
+
+                </div>
+
+                <div class="col-6">
+                    <h3 id="name">Result</h3>
+                    <h3>---> {{ results }}</h3>
+                    
+
+
+
+
+                </div>
+            </div>
+
+            <div class="col-6">
+                <form action="/" method=post enctype="multipart/form-data">
+                    <input type="file" name="file" accept="image/*" multiple/>
+                    <!--
+                    <select id="type" name="type">
+                        <option value="shape">shape</option>
+                        <option value="color">color</option>
+                        <option value="both">both</option>
+                    </select>
+                    -->
+                    <input type="submit" value="Upload" />
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
